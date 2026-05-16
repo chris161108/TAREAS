@@ -1,0 +1,31 @@
+.contenedor {
+	position: relative;
+	display: inline-block;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	background: #fff;
+}
+
+.contenedor img {
+	max-width: 200px;
+	display: block;
+}
+
+.etiqueta-oferta {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #e63946;
+	color: #fff;
+	padding: 6px 10px;
+	font-weight: 700;
+	font-size: 0.9rem;
+	border-bottom-left-radius: 6px;
+}
+
+
+@media (max-width:480px){
+	.contenedor img{ max-width:140px }
+}
+

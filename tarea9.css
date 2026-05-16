@@ -1,0 +1,8 @@
+.menu a,
+.menu a:visited {   
+    text-decoration: none;
+}
+.menu a:hover,
+.menu a:focus {
+    text-decoration: none;
+}
