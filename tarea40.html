@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 40</title>
+    <link rel="stylesheet" href="tarea40.css">
+</head>
+<body>
+    <div id="home" class="page">
+        <main>
+            <h1>Modales Nativos CSS — Tarea 20</h1>
+            <p>Ejemplo de modal sin JavaScript, usando anclajes e <code>:target</code>.</p>
+            <p><a class="btn" href="#modal">Abrir Modal</a></p>
+        </main>
+    </div>
+
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal__content">
+            <h2 id="modal-title">Modal nativo con CSS</h2>
+            <p>Este pop-up se ha abierto usando un enlace con fragmento de URL y la pseudoclase <code>:target</code>. No hay JavaScript.</p>
+            <p class="actions">
+                <a class="btn secondary" href="#home">Cerrar</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

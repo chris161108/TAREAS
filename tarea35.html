@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 35</title>
+    <link rel="stylesheet" href="tarea35.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Fusión de Color — <em>mix-blend-mode</em></h1>
+        <p class="intro">Superpone texto sobre imágenes para crear contrastes interesantes. Prueba los dos ejemplos abajo (multiply y difference).</p>
+
+        <section class="demo">
+            <div class="card">
+                <img src="https://picsum.photos/1200/700?random=101" alt="Paisaje aleatorio">
+                <div class="overlay overlay-multiply">
+                    <h2>MULTIPLY</h2>
+                    <p>Texto con <strong>mix-blend-mode: multiply</strong> para oscurecer y mezclar colores.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo">
+            <div class="card">
+                <img src="https://picsum.photos/1200/700?random=102" alt="Ciudad aleatoria">
+                <div class="overlay overlay-difference">
+                    <h2>DIFFERENCE</h2>
+                    <p>Texto con <strong>mix-blend-mode: difference</strong> que invierte colores y genera contraste.</p>
+                </div>
+            </div>
+        </section>
+
+        <p class="note">Abre este archivo en un navegador moderno para ver los efectos. Usa Live Server para una recarga instantánea.</p>
+    </main>
+</body>
+</html>

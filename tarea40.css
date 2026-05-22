@@ -1,0 +1,30 @@
+/* Estilos básicos */
+:root{--accent:#2b7cff;--bg:#f7f8fb;--max-width:720px}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;line-height:1.4;margin:0;background:var(--bg);color:#222;padding:2rem;display:flex;align-items:flex-start;justify-content:center;min-height:100vh}
+.page{max-width:var(--max-width);width:100%}
+h1{margin:0 0 .5rem}
+p{margin:.5rem 0}
+
+/* Botones */
+.btn{display:inline-block;padding:.55rem 1rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none;font-weight:600}
+.btn.secondary{background:#e6e9ef;color:#111}
+
+/* Modal (overlay) */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:2rem;background:rgba(0,0,0,0.45);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .22s ease,visibility .22s ease}
+.modal__content{background:#fff;border-radius:10px;padding:1.25rem 1.25rem;max-width:520px;width:100%;box-shadow:0 10px 30px rgba(2,6,23,0.12);transform:translateY(-10px);transition:transform .22s ease}
+
+/* Activar modal con :target */
+#modal:target{opacity:1;visibility:visible;pointer-events:auto}
+#modal:target .modal__content{transform:translateY(0)}
+
+/* Accesibilidad visual */
+.modal[aria-hidden="true"]{outline:0}
+
+/* Pequeños ajustes responsivos */
+@media (max-width:480px){
+    .modal__content{padding:1rem;border-radius:8px}
+}
+
+/* Prevent focus outlines being hidden for keyboard users */
+:focus{outline:2px solid #0000;outline-offset:2px}

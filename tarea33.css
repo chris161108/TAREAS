@@ -1,0 +1,35 @@
+body { font-family: Arial, Helvetica, sans-serif; padding: 2rem; counter-reset: section; }
+
+h1 { margin-bottom: 1rem; }
+
+/* Cada .section incrementa 'section' y reinicia los subsections */
+.section {
+    counter-increment: section;
+    counter-reset: subsection;
+    margin-bottom: 1.25rem;
+}
+
+/* Insertamos el número de sección usando counters() */
+.section > .title::before {
+    content: counters(section, ".") " ";
+    font-weight: 700;
+    margin-right: .5rem;
+}
+
+/* Sub-secciones: incrementan 'subsection' */
+.subsection {
+    counter-increment: subsection;
+    margin-left: 1.25rem;
+    display: block;
+}
+
+/* Insertamos índices compuestos 1.1, 1.2 usando counters() y counter() */
+.subsection::before {
+    content: counters(section, ".") "." counter(subsection) " ";
+    font-weight: 600;
+    margin-right: .5rem;
+}
+
+/* Estilos visuales opcionales */
+.title { font-size: 1.1rem; margin: .25rem 0; }
+.note { color: #444; font-size: .95rem; }

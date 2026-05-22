@@ -1,0 +1,48 @@
+:root{
+	--max-width: 920px;
+	--sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+	margin:0;
+	padding:2rem;
+	font-family:var(--sans);
+	background:#f6f8fb;
+	color:#0b1220;
+	-webkit-font-smoothing:antialiased;
+}
+
+.wrapper{max-width:var(--max-width);margin:0 auto}
+
+header h1{
+	margin:0 0 .25rem;
+	font-weight:700;
+	/* título principal: mínimo 1.5rem, escala con vw, máximo 3.75rem */
+	font-size: clamp(1.5rem, 4vw + 1rem, 3.75rem);
+}
+.lead{margin:0 0 1rem;color:#334155;font-size: clamp(1rem, 1.2vw + 0.4rem, 1.25rem)}
+
+.demo{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{background:#fff;padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+
+/* Regla: use clamp(min, preferred-with-vw, max) */
+.fluid-h1{font-size: clamp(2rem, 4vw + 1rem, 4.5rem);margin:.25rem 0}
+.fluid-h2{font-size: clamp(1.5rem, 3.2vw + 0.8rem, 3rem);margin:.25rem 0}
+.fluid-h3{font-size: clamp(1.125rem, 2.2vw + 0.5rem, 2rem);margin:.25rem 0}
+.fluid-h4{font-size: clamp(1rem, 1.6vw + 0.4rem, 1.25rem);margin:.25rem 0}
+.fluid-body{font-size: clamp(0.95rem, 1vw + 0.25rem, 1.15rem);color:#24324a}
+
+.code{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;background:#0f1724;color:#e6eef8;padding:1rem;border-radius:6px;overflow:auto;font-size:.9rem}
+
+footer{margin-top:.75rem;color:#475569;font-size:.95rem}
+
+@media(min-width:900px){
+	.demo{grid-template-columns:1fr 1fr}
+}
+
+/* Small helper: scale the whole document slightly on very narrow screens */
+@media(max-width:360px){
+	body{padding:1rem}
+}
+

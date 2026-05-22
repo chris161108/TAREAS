@@ -1,0 +1,46 @@
+:root{
+    --accent-1: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+    --accent-2: linear-gradient(135deg,#f6d365 0%,#fda085 100%);
+    --accent-3: linear-gradient(135deg,#89f7fe 0%,#66a6ff 100%);
+    --accent-4: linear-gradient(135deg,#fbc2eb 0%,#a6c1ee 100%);
+    --text-light: #ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Segoe UI, Roboto, Arial, sans-serif;color:#111}
+main{display:flex;flex-direction:column;gap:2rem}
+
+.hero{
+    min-height:220px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--text-light);text-align:center;padding:2rem 1rem;position:relative;overflow:hidden;
+}
+.hero .content{max-width:900px}
+.hero h1{margin:0 0 .5rem;font-size:clamp(1.4rem,3vw,2.4rem)}
+.hero p{margin:0;opacity:.95}
+
+/* Diagonal cut: bottom-right trimmed */
+.header--diagonal{background:var(--accent-1)}
+.header--diagonal{clip-path:polygon(0 0,100% 0,100% 82%,0 100%);-webkit-clip-path:polygon(0 0,100% 0,100% 82%,0 100%)}
+
+/* Inverted diagonal: top-right trimmed */
+.header--inverted{background:var(--accent-2)}
+.header--inverted{clip-path:polygon(0 15%,100% 0,100% 100%,0 100%);-webkit-clip-path:polygon(0 15%,100% 0,100% 100%,0 100%)}
+
+/* Trapezoid: angled bottom edges */
+.header--trapezoid{background:var(--accent-3)}
+.header--trapezoid{clip-path:polygon(0 0,100% 0,85% 100%,15% 100%);-webkit-clip-path:polygon(0 0,100% 0,85% 100%,15% 100%)}
+
+/* Abstract polygon for creative shapes */
+.header--abstract{background:var(--accent-4)}
+.header--abstract{clip-path:polygon(0 0,100% 0,100% 70%,60% 100%,40% 70%,0 100%);-webkit-clip-path:polygon(0 0,100% 0,100% 70%,60% 100%,40% 70%,0 100%)}
+
+/* Make sure content within the clipped area doesn't overflow on small screens */
+@media (max-width:520px){
+    .hero{padding:2.5rem 1rem}
+    .header--diagonal{clip-path:polygon(0 0,100% 0,100% 88%,0 100%)}
+    .header--inverted{clip-path:polygon(0 22%,100% 0,100% 100%,0 100%)}
+}
+
+/* Accessibility: provide focus styles if headers are interactive later */
+.hero:focus{outline:3px solid rgba(255,255,255,.25);outline-offset:4px}

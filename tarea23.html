@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 23</title>
+    <link rel="stylesheet" href="tarea23.css">
+</head>
+<body>
+    <main>
+        <section class="flip-card" id="card">
+            <div class="flip-card-inner">
+                <div class="flip-card-face flip-card-front">
+                    <div>
+                        <div class="title">Tarjeta 3D</div>
+                        <div class="subtitle">Pasa el mouse para voltear 🃏</div>
+                    </div>
+                </div>
+                <div class="flip-card-face flip-card-back">
+                    <div>
+                        <div class="title">Reverso</div>
+                        <div class="subtitle">Aquí va información adicional.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Añade soporte táctil: tocar la tarjeta la voltea
+        (function(){
+            const card = document.getElementById('card');
+            if(!card) return;
+            let supportsHover = window.matchMedia('(hover: hover)').matches;
+            if(!supportsHover){
+                card.addEventListener('click', ()=> card.classList.toggle('is-flipped'));
+                // also allow keyboard activation
+                card.setAttribute('tabindex','0');
+                card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') card.classList.toggle('is-flipped'); });
+            }
+        })();
+    </script>
+</body>
+</html>

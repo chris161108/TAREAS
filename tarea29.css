@@ -1,0 +1,78 @@
+:root{
+  --bg:#e6eef7;
+  --surface:#e6eef7;
+  --dark-shadow: rgba(163,177,198,0.6);
+  --light-shadow: rgba(255,255,255,0.9);
+  --accent:#6ea8fe;
+  --text:#2f3b4a;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:linear-gradient(180deg,var(--bg),#e3ecf6);
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px;
+}
+
+.wrap{width:100%;max-width:980px;display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start}
+
+/* Card with multiple box-shadows: outer light + dark, and subtle inset */
+.card{
+  background:var(--surface);
+  border-radius:18px;
+  padding:28px;
+  box-shadow:
+    18px 18px 36px var(--dark-shadow),
+    -16px -16px 36px var(--light-shadow),
+    inset 6px 6px 12px rgba(0,0,0,0.03),
+    inset -6px -6px 12px rgba(255,255,255,0.6);
+}
+
+h1{margin:0 0 8px 0;font-size:20px}
+p.lead{margin:0 0 18px 0;color:#576574}
+
+.controls{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Neumorphic button */
+.neum-btn{
+  appearance:none;border:0;background:var(--surface);color:var(--text);
+  padding:12px 18px;border-radius:12px;cursor:pointer;font-weight:600;
+  box-shadow: 8px 8px 18px rgba(163,177,198,0.45), -8px -8px 18px rgba(255,255,255,0.9);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.neum-btn:active{
+  transform:translateY(2px);
+  box-shadow: inset 6px 6px 12px rgba(163,177,198,0.35), inset -6px -6px 12px rgba(255,255,255,0.7);
+}
+
+/* Secondary soft button */
+.neum-btn.secondary{padding:10px 14px;border-radius:10px;font-weight:500}
+
+/* Toggle switch */
+.toggle{
+  width:60px;height:34px;border-radius:999px;padding:6px;background:var(--surface);
+  display:inline-flex;align-items:center;cursor:pointer;
+  box-shadow: 6px 6px 14px rgba(163,177,198,0.35), -6px -6px 14px rgba(255,255,255,0.9);
+}
+.toggle .dot{width:22px;height:22px;border-radius:50%;background:var(--surface);box-shadow:6px 6px 12px rgba(163,177,198,0.35), -6px -6px 12px rgba(255,255,255,0.9);transition:transform .18s ease}
+.toggle.on{background:linear-gradient(90deg,var(--accent),#8ad0ff)}
+.toggle.on .dot{transform:translateX(26px);box-shadow:inset 3px 3px 8px rgba(0,0,0,0.06)}
+
+/* Input with inset (pressed) effect */
+.neum-input{
+  width:100%;padding:12px 14px;border-radius:12px;border:0;background:var(--surface);
+  box-shadow: inset 6px 6px 12px rgba(163,177,198,0.25), inset -6px -6px 12px rgba(255,255,255,0.8);
+  outline:none;font-size:14px;color:var(--text)
+}
+
+/* Sidebar examples */
+.sidebar .small-card{padding:18px;border-radius:12px;margin-bottom:16px}
+
+footer.note{font-size:13px;color:#6a7581;margin-top:12px}
+
+@media(max-width:860px){.wrap{grid-template-columns:1fr;}}

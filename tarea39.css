@@ -1,0 +1,63 @@
+/* Styles for Menú Fijo (Sticky) - tarea39.css */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fff;
+}
+
+/* Sticky menu */
+.sticky-menu {
+  position: sticky;
+  top: 0; /* clava el elemento arriba */
+  z-index: 1000; /* se asegura que quede encima del contenido */
+  background: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 1rem;
+  align-items: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #222;
+  padding: 0.5rem 0.75rem;
+  display: inline-block;
+}
+
+.menu li a:hover {
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.hero {
+  padding: 2rem 1rem;
+  background: linear-gradient(180deg, #f9f9fb, #ffffff);
+  text-align: center;
+}
+
+.content section {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 1px dashed #eee;
+}
+
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem;
+  }
+
+  .menu li a {
+    padding: 0.5rem 0.5rem;
+  }
+}

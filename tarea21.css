@@ -1,0 +1,51 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 220px 1fr 260px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav content aside"
+    "footer footer footer";
+  gap: 1rem;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #f3f6fb;
+  padding: 1rem;
+}
+
+.header { grid-area: header; background: #273c75; color: #fff; padding: 1rem; border-radius: 8px; }
+.nav    { grid-area: nav; background: #ffb142; color: #222; padding: 1rem; border-radius: 8px; }
+.content{ grid-area: content; background: #ffffff; padding: 1rem; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.aside  { grid-area: aside; background: #00a8ff; color: #fff; padding: 1rem; border-radius: 8px; }
+.footer { grid-area: footer; background: #2f3640; color: #fff; padding: 0.75rem; border-radius: 8px; text-align: center; }
+
+
+.nav, .aside { min-height: 6rem; }
+.content { min-height: 12rem; }
+
+
+@media (max-width: 720px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "content"
+      "aside"
+      "footer";
+    padding: 0.75rem;
+    gap: 0.6rem;
+  }
+
+  .nav, .aside { min-height: 4rem; }
+  .content { min-height: 10rem; }
+}
+
+
+@media (min-width: 721px) and (max-width: 1000px) {
+  body { grid-template-columns: 180px 1fr 200px; }
+}

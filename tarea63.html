@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Botón disparador -->
+<button class="btn-primary" onclick="document.getElementById('modalNativo').showModal()">Abrir Modal</button>
+
+<dialog id="modalNativo" class="native-modal">
+  <h2 class="modal-title">¡Alerta de Sistema!</h2>
+  <p>Esto es un pop-up nativo de HTML5.</p>
+  
+  <form method="dialog">
+    <button type="submit" class="btn-danger">Cerrar Modal</button>
+  </form>
+</dialog>    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <template id="tarjeta-usuario">
+  <style>
+    .card { border: 1px solid #ccc; padding: 1rem; border-radius: 8px; }
+  </style>
+  <div class="card">
+    <h2><slot name="nombre">Nombre por defecto</slot></h2>
+    <p><slot name="rol">Usuario</slot></p>
+  </div>
+</template>
+    
+</body>
+</html>

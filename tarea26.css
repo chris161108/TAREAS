@@ -1,0 +1,25 @@
+/* Estilos para el acordeón sin JavaScript (Checkbox Hack) */
+:root{
+    --accent:#3b82f6;
+    --bg:#f8fafc;
+    --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#111;margin:0;padding:2rem}
+.container{max-width:720px;margin:0 auto}
+h1{font-size:1.4rem;margin:0 0 1rem}
+.accordion{background:transparent;border-radius:8px;overflow:hidden}
+.accordion-checkbox{display:none}
+.accordion-label{display:flex;justify-content:space-between;align-items:center;padding:0.9rem 1rem;background:var(--card);border:1px solid #e6edf3;border-bottom:none;cursor:pointer;font-weight:600}
+.accordion-label::after{content:'+';font-weight:700;transform-origin:50% 50%;transition:transform .25s ease}
+.accordion-checkbox:checked + .accordion-label::after{content:'−'}
+.accordion-content{background:var(--card);border:1px solid #e6edf3;border-top:none;padding:0 1rem;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .25s ease}
+.accordion-checkbox:checked + .accordion-label + .accordion-content{max-height:240px;padding:1rem}
+.accordion-content p{margin:0;color:#334155}
+
+/* Separadores y detalles */
+.accordion-label + .accordion-checkbox + .accordion-label{border-top:1px solid #e6edf3}
+
+@media (prefers-reduced-motion:reduce){
+  .accordion-label::after,.accordion-content{transition:none}
+}

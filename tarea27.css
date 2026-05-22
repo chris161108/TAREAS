@@ -1,0 +1,69 @@
+/* Tooltip base using data-tooltip + attr() in content and ::before for the floating box */
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+    outline: none;
+}
+
+[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px) scale(0.98);
+    bottom: 100%;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    line-height: 1;
+    transition: opacity 160ms ease, transform 160ms ease;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+/* Show on hover/focus */
+[data-tooltip]:hover::before,
+[data-tooltip]:focus::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-12px) scale(1);
+}
+
+/* Optional arrow using a rotated square behind the tooltip */
+[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% - 6px);
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background: rgba(0,0,0,0.85);
+    opacity: 0;
+    transition: opacity 160ms ease, transform 160ms ease;
+    z-index: 10;
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::after,
+[data-tooltip]:focus::after {
+    opacity: 1;
+    transform: translateX(-50%) rotate(45deg) translateY(-2px);
+}
+
+/* Small demo page styling */
+body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; padding: 28px; color:#111; }
+h1 { font-size: 1.25rem; margin-bottom: 12px }
+p { margin: 14px 0 }
+.examples { display:flex; gap:14px; flex-wrap:wrap; align-items:center }
+.chip { background:#f3f4f6; padding:10px 14px; border-radius:999px; border:1px solid #e5e7eb }
+button.demo, a.demo, span.demo { background:transparent; border:1px solid #d1d5db; padding:8px 12px; border-radius:8px }
+[data-tooltip]:focus { box-shadow: 0 0 0 3px rgba(59,130,246,0.15); }
+
+/* Responsive: reduce tooltip size on narrow screens */
+@media (max-width:420px) {
+    [data-tooltip]::before { font-size:0.8rem; padding:5px 8px }
+}

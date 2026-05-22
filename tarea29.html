@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño Neumorfista — Tarea 29</title>
+    <link rel="stylesheet" href="tarea29.css">
+</head>
+<body>
+    <div class="wrap">
+        <main class="card">
+            <h1>Neumorfismo — Interfaz Extrudida</h1>
+            <p class="lead">Combina sombras claras y oscuras para lograr el efecto extruido. Ejemplos abajo.</p>
+
+            <div class="controls" style="margin-bottom:18px;">
+                <button class="neum-btn">Primario</button>
+                <button class="neum-btn secondary">Secundario</button>
+                <div class="toggle" id="demoToggle" title="Interruptor" aria-pressed="false">
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <label style="display:block;margin-bottom:8px;font-size:13px;color:#5d6a74">Buscar</label>
+            <input class="neum-input" placeholder="Escribe algo..." />
+
+            <section style="margin-top:20px">
+                <h2 style="font-size:14px;margin:0 0 10px 0">Tarjeta de ejemplo</h2>
+                <div class="card" style="padding:16px">
+                    <strong>Estado:</strong> <span style="color:#5577a8">Activo</span>
+                    <p style="margin-top:8px;color:#5b6a74">Esta tarjeta usa múltiples sombras: exteriores para elevar, e internas sutiles para profundidad.</p>
+                </div>
+            </section>
+
+            <footer class="note">Pulsa los botones y el toggle para ver el efecto neumorfista.</footer>
+        </main>
+
+        <aside class="sidebar">
+            <div class="small-card card">
+                <h3 style="margin:0 0 8px 0;font-size:15px">Controles</h3>
+                <p style="margin:0 0 12px 0;color:#5b6a74">Ejemplos de botón, switch y campos con sombras múltiples.</p>
+                <div style="display:flex;gap:8px">
+                    <button class="neum-btn">OK</button>
+                    <button class="neum-btn secondary">Más</button>
+                </div>
+            </div>
+
+            <div class="small-card card">
+                <h4 style="margin:0 0 8px 0;font-size:14px">Nota técnica</h4>
+                <p style="margin:0;color:#5b6a74">Para profundidad convincente, mezclar sombras exteriores (para elevación) con inset (para relieve).</p>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // pequeño demo para el toggle
+        const toggle = document.getElementById('demoToggle');
+        toggle.addEventListener('click', ()=>{
+            toggle.classList.toggle('on');
+            const pressed = toggle.classList.contains('on');
+            toggle.setAttribute('aria-pressed', pressed);
+        });
+    </script>
+</body>
+</html>

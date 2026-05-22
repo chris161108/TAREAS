@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 28</title>
+    <link rel="stylesheet" href="tarea28.css">
+</head>
+<body>
+    <main class="wrapper">
+        <header>
+            <h1>Tipografía Fluida Dinámica 🔠</h1>
+            <p class="lead">Fuentes que crecen o se encogen armónicamente según la pantalla usando <code>clamp()</code> y <code>vw</code>.</p>
+        </header>
+
+        <section class="demo">
+            <article class="card">
+                <h2>Escala de encabezados</h2>
+                <h1 class="fluid-h1">Encabezado H1 — Tipografía fluida</h1>
+                <h2 class="fluid-h2">Encabezado H2 — Tipografía fluida</h2>
+                <h3 class="fluid-h3">Encabezado H3 — Tipografía fluida</h3>
+                <h4 class="fluid-h4">Encabezado H4 — Tipografía fluida</h4>
+                <p class="fluid-body">Este párrafo acompaña a los encabezados para mostrar cómo el texto se adapta proporcionalmente al ancho de la ventana.</p>
+            </article>
+
+            <article class="card">
+                <h2>Ejemplo de regla</h2>
+                <pre class="code">/* ejemplo */
+h1 { font-size: clamp(1.5rem, 4vw + 1rem, 4.5rem); }
+h2 { font-size: clamp(1.125rem, 2.5vw + 0.6rem, 3rem); }</pre>
+            </article>
+        </section>
+
+        <footer>
+            <p>Redimensiona la ventana para ver el efecto.</p>
+        </footer>
+    </main>
+</body>
+</html>

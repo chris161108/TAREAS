@@ -1,0 +1,39 @@
+/* tarea38.css - Subrayado Animado */
+:root{
+  --accent: #ff6a88;
+  --accent-2: #ffd36a;
+}
+
+body{
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  padding: 40px;
+  background: #fff;
+  color: #111;
+}
+
+.underline{
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.underline::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  transition: width 320ms cubic-bezier(.2,.9,.2,1);
+}
+
+.underline:hover::after,
+.underline:focus::after,
+.underline:focus-visible::after{
+  width: 100%;
+}
+
+/* Small demo spacing */
+main{max-width:720px;margin:0 auto}

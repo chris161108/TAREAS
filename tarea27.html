@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EJERCICIO 27 — Tooltips con data-tooltip</title>
+        <link rel="stylesheet" href="tarea27.css">
+</head>
+<body>
+    <h1>Tooltips con <code>data-tooltip</code>, <code>attr()</code> y <code>::before</code></h1>
+    <p>Coloca el texto en el atributo <strong>data-tooltip</strong>. El CSS usa <code>content: attr(data-tooltip)</code> y muestra la ventanita con <code>::before</code>.</p>
+
+    <div class="examples">
+        <button class="demo" data-tooltip="Guardar cambios" aria-label="Guardar" tabindex="0">Guardar</button>
+
+        <a href="#" class="demo" data-tooltip="Más información sobre este enlace" tabindex="0">Más info</a>
+
+        <span class="chip" data-tooltip="Estado: completado" tabindex="0">Completado</span>
+
+        <span data-tooltip="Fecha límite: 2026-05-30" tabindex="0">📅 Hoy</span>
+
+        <button class="demo" data-tooltip="Atajo: Ctrl + S" tabindex="0">Atajos</button>
+    </div>
+
+    <p>Las tooltips aparecen al pasar el ratón o al enfocar con teclado (accesibilidad).</p>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+.native-modal {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 400px;
+}
+
+/* Estilo para el fondo oscuro cuando el modal se abre */
+.native-modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+.modal-title {
+  margin-top: 0;
+  color: #e74c3c;
+}

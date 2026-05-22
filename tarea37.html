@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJERCICIO 37</title>
+    <link rel="stylesheet" href="tarea37.css">
+</head>
+<body>
+    <main>
+        <h1>Ejercicio 37 — Container Queries 📦</h1>
+        <p>Componente que cambia observando su propio contenedor (no la pantalla). Arrastra el cuadro resizable para ver los cambios.</p>
+
+        <section class="examples">
+            <div class="container demo" style="width:280px">
+                <article class="card">
+                    <div class="media"><img src="https://via.placeholder.com/400x240?text=Imagen" alt="Imagen"></div>
+                    <div class="content">
+                        <h2>Tarjeta compacta</h2>
+                        <p>Esta versión muestra la disposición vertical porque el contenedor es estrecho.</p>
+                        <div class="meta">Compacto • 280px</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="container demo" style="width:420px">
+                <article class="card">
+                    <div class="media"><img src="https://via.placeholder.com/400x240?text=Imagen" alt="Imagen"></div>
+                    <div class="content">
+                        <h2>Tarjeta intermedia</h2>
+                        <p>Cuando el contenedor alcanza ~400px, la tarjeta adapta su layout usando <code>@container</code>.</p>
+                        <div class="meta">Intermedio • 420px</div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="container demo resizable" style="width:360px">
+                <article class="card">
+                    <div class="media"><img src="https://via.placeholder.com/400x240?text=Imagen" alt="Imagen"></div>
+                    <div class="content">
+                        <h2>Tarjeta redimensionable</h2>
+                        <p>Arrastra el borde derecho de este contenedor para probar los puntos de quiebre.</p>
+                        <div class="meta">Redimensionable • prueba</div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <p class="note">CSS: establecemos <strong>container-type</strong> en el contenedor y usamos <strong>@container</strong> para reglas basadas en el ancho del contenedor.</p>
+    </main>
+</body>
+</html>

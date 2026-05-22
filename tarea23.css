@@ -1,0 +1,13 @@
+:root{ --card-w:320px; --card-h:200px; }
+body{ font-family: Arial, Helvetica, sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; background:#f0f4f8; }
+.flip-card{ perspective:1000px; }
+.flip-card-inner{ width:var(--card-w); height:var(--card-h); position:relative; transition:transform 0.7s; transform-style:preserve-3d; cursor:pointer; }
+.flip-card:hover .flip-card-inner{ transform:rotateY(180deg); }
+.flip-card.is-flipped .flip-card-inner{ transform:rotateY(180deg); }
+.flip-card-face{ position:absolute; inset:0; backface-visibility:hidden; display:flex; align-items:center; justify-content:center; border-radius:12px; box-shadow:0 8px 20px rgba(0,0,0,0.12); }
+.flip-card-front{ background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%); color:#fff; }
+.flip-card-back{ background:#fff; transform:rotateY(180deg); color:#333; padding:20px; box-sizing:border-box; }
+.title{ font-size:1.25rem; font-weight:700; }
+.subtitle{ opacity:0.9; font-size:0.95rem; }
+/* small responsive */
+@media (max-width:420px){ :root{ --card-w:280px; --card-h:180px; } }

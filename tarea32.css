@@ -1,0 +1,70 @@
+/* tarea32.css - Estilos Basados en Contenido (:has) */
+:root{
+    --card-bg: #ffffff;
+    --card-border: #e6e6e6;
+    --accent: #c0392b;
+}
+
+*{box-sizing:border-box}
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    margin:2rem;
+    background: #f6f7fb;
+    color:#222;
+}
+
+.wrap{max-width:980px;margin:0 auto}
+h1{margin:0 0 .25rem}
+p{color:#444;margin-top:0}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1rem;
+    margin-top:1rem;
+}
+
+.card{
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    padding:1rem;
+    border-radius:10px;
+    box-shadow:0 6px 18px rgba(20,30,60,.06);
+    transition:transform .18s ease, box-shadow .18s ease, filter .18s ease, opacity .18s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(20,30,60,.08)}
+
+.media{font-size:2rem;margin-bottom:.5rem}
+.card h3{margin:.25rem 0}
+.card p{margin:.5rem 0 1rem;color:#555;font-size:.95rem}
+
+.status{
+    display:inline-block;
+    padding:.25rem .5rem;
+    border-radius:999px;
+    font-size:.8rem;
+    background:#eef3ff;
+    color:#1b4ed6;
+    font-weight:600;
+}
+
+.status.agotado{background:transparent;color:var(--accent);font-weight:700}
+
+/* Regla clave: si la tarjeta contiene un elemento .status.agotado, restyle completo */
+.card:has(.status.agotado){
+    border-color:var(--accent);
+    background:linear-gradient(180deg, #fff7f7 0%, #fff 100%);
+    filter:grayscale(.35) contrast(.9);
+    opacity:.95;
+}
+
+/* Asegurar que el badge se destaque en tarjetas agotadas */
+.card:has(.status.agotado) .status{
+    background:var(--accent);
+    color:#fff;
+}
+
+/* Pequeña ayuda visual cuando :has no está soportado */
+@supports selector(:has(*)){
+  /* navegador soporta :has() */
+}
