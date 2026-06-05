@@ -1,0 +1,12 @@
+#titulo {
+    color: blue;
+}
+
+.parrafo-destacado {
+    font-weight: bold;
+    color: #555
+}
+
+p {
+    font-size: 18px;
+}
