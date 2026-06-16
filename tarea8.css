@@ -1,3 +1,14 @@
-h2, h3, h4 {
-    color: blue;
+.tarjeta {
+    width: 250px;
+    box-shadow:  0 4px 8px rgba((0,0,0,0.2), green, blue, alpha);
+    text-align: center;
+    padding: 20px;
+    border-radius:  8px;
+}
+
+.tarjeta img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }

@@ -1,8 +1,13 @@
-.menu a,
-.menu a:visited {   
-    text-decoration: none;
+.contenedor {
+    position: relative;
+    width: 300px;
 }
-.menu a:hover,
-.menu a:focus {
-    text-decoration: none;
+
+.aviso {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px;
 }

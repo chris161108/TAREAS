@@ -1,5 +1,8 @@
-body {
-    font-family: fantasy;
-    font-size: x-large;
-    line-height: 100px;
+img {
+    width: 200px;
+    margin: 10px;
+    transition: opacity 0.3s;
+}
+img:hover{
+    opacity: 0.5;
 }

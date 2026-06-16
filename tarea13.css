@@ -1,4 +1,16 @@
-.contenedor {
-    display: flex;
-    justify-content: space-between;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: aquamarine;
+    box-shadow: 0px 8px 16px rgba(red, green, blue, alpha);
+    padding: 12px;
+}
+
+.dropdown:hover .submenu {
+    display: block;
 }

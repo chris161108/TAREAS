@@ -1,5 +1,15 @@
-h1 {
-    position: relative;
-    top: 10px;
-    left: 50px;
+:root {
+    --fondo: gray;
+    --texto: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fondo: red
+        --texto: gray
+    }
+}
+body {
+    background-color: var(--fondo);
+    color: var(--texto);
 }

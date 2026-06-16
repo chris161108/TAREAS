@@ -1,4 +1,13 @@
-.contenedor {
-    width: 1000px;
-    margin: 0 auto;
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: gray;
+    list-style: none;
+    padding: 15px;
+}
+
+nav a {
+    color: red;
+    text-decoration: none;
 }

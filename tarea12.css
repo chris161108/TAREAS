@@ -1,3 +1,16 @@
-.contenedor {
-    box-shadow: 0 0 50px rgba(2, 2, 3, 0.5);
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+header, nav, main, footer { background: gray; padding: 20px;}
+
+@media screen and (min-width: 768px){
+    .wrapper{
+        grid-template-columns: 200px 1fr;
+    }
+    .ancho-completo {
+        grid-column: span 2;
+    }
+    
 }

@@ -1,3 +1,14 @@
-li {
-    display: inline-block;
+.wrapper {
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+    grid-gap: 10px;
+    
 }
+
+header { grid-area: header; background-color: #ccc; padding: 10px;}
+nav { grid-area: sidebar; background-color: #eee; padding: 10px;}
+main { grid-area: content; background-color: #fff; padding: 10px;}
+footer { grid-area: footer; background-color: #ccc; padding: 10px;}

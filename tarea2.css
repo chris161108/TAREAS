@@ -1,5 +1,12 @@
-.destacado {
-  font-weight: bold;
-  color: red;
-
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
